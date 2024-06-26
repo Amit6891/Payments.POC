@@ -1,0 +1,68 @@
+<div class="container mt-3">
+    <h5 class="card-title mb-3 pb-2 border-bottom">PAYMENT OPTIONS</h5>
+        <div *ngIf="account" class="row mb-3">
+          <div class="col-7 col-md-7">
+            <p class="mb-0">Account</p>
+            <p class="mb-0">Final Settlement</p>
+            <p>Reference Number</p>
+          </div>
+          <div class="col-5 col-md-5">
+            <p class="mb-0">{{account.name}}</p>
+            <p class="mb-0">{{account.finalSettlement}}</p>
+            <p>{{account.refNum}}</p>
+          </div>
+        </div>
+        <div *ngIf="account" class="form-group">
+          <label for="paymentAmount" class="mb-1 font-weight-bold">Payment Amount</label>
+          <input type="text" class="form-control" 
+            id="paymentAmount" placeholder="Amount"
+            [(ngModel)]="account.amount">
+        </div>
+        <h6 class="mt-4 font-weight-bold">Payment Options</h6>
+        <div class="card mb-3">
+          <div class="card-body">
+            <p class="mb-2">EFT Payment 
+                <span class="text-success">via Stitch</span></p>
+            <div class="d-flex justify-content-around">
+              <img src="../../assets/card.png" alt="Bank 1" class="img-fluid" style="max-height: 40px;">
+              <img src="../../assets/card.png" alt="Bank 2" class="img-fluid" style="max-height: 40px;">
+              <img src="../../assets/card.png" alt="Bank 3" class="img-fluid" style="max-height: 40px;">
+              <img src="../../assets/card.png" alt="Bank 4" class="img-fluid" style="max-height: 40px;">
+              <img src="../../assets/card.png" alt="Bank 5" class="img-fluid" style="max-height: 40px;">
+            </div>
+          </div>
+        </div>
+        <div class="card mb-3">
+          <div class="card-body">
+            <p class="mb-2">Card Payment 
+                <span class="text-success">via Paygate</span></p>
+            <div class="d-flex justify-content-around">
+              <img src="../../assets/card.png" alt="Paygate" class="img-fluid" style="max-height: 40px;">
+              <img src="../../assets/card.png" alt="Visa" class="img-fluid" style="max-height: 40px;">
+              <img src="../../assets/card.png" alt="Mastercard" class="img-fluid" style="max-height: 40px;">
+              <img src="../../assets/card.png" alt="Verified by Visa" class="img-fluid" style="max-height: 40px;">
+              <img src="../../assets/card.png" alt="Mastercard SecureCode" class="img-fluid" style="max-height: 40px;">
+            </div>
+          </div>
+        </div>
+        <div class="card mb-3">
+            <div class="card-body">
+              <p class="mb-2">Payments Arrangement</p>
+            </div>
+        </div>
+        <div class="card mb-3">
+            <div class="card-body">
+              <p class="mb-2">Debit Order Setup</p>
+            </div>
+        </div>
+        <h6 class="mt-4 font-weight-bold">Payment Notification</h6>
+        <div *ngIf="account" class="form-group">
+          <input type="email" class="form-control" 
+            id="paymentNotification" placeholder="Email address or cell number"
+            [(ngModel)]="account.email">
+        </div>
+        <div class="form-group text-center">
+            <button class="btn btn-success btn-block mt-3" (click)="payNow()">Pay Now</button>
+        </div>
+  </div>
+  
